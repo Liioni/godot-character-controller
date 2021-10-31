@@ -23,10 +23,10 @@ func _movement(delta):
 	vel = move_and_slide(vel, Vector2.UP)
 	
 	# gravity
-	if(vel.y < 0):
+	if(vel.y > 0):
 		vel.y += gravity * fallMultiplier * delta
 	else:
-		vel.y += gravity * delta
+		vel.y += gravity * fallMultiplier * delta
 	
 	# jump input
 	if Input.is_action_just_pressed("jump") and is_on_floor():
